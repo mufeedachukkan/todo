@@ -1,0 +1,22 @@
+<div class="container-fluid  mt-5">
+<form [formGroup]="registerForm">
+    <div class="mb-3">
+        <label for="exampleid" class="form-label">userId</label>
+        <input type="text" class="form-control"formControlName="userId" id="exampleInputPassword1">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+        <label for="dob" class="form-label">date of birth</label>
+        <input type="date" class="form-control" formControlName="dateOfBirth" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="register()">Submit</button>
+</form>
+</div>
