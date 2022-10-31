@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
     password: ['', [Validators.required]],
     dateOfBirth: ['', [Validators.required]]
   })
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -38,6 +39,8 @@ export class RegisterComponent implements OnInit {
       .subscribe((result: any) => {
         console.log("result", result)
         alert(result.message)
+        localStorage.setItem('email', JSON.stringify(result.email))
+        this.router.navigateByUrl('home')
       }
         , (result) => {
           alert(result.error.message)

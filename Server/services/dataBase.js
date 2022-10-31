@@ -5,7 +5,13 @@ const User = mongoose.model('User', {
     email:String,
     password: String,
     DOB: String,
-    events:Array,
-    deletedEvents:Array
 })
-module.exports = { User }
+const Event=mongoose.model('Event',{
+    email:String,
+    events:Array
+})
+const Trash=mongoose.model('Trash',{
+    email:String,
+    events:Array
+}) 
+module.exports = { User, Event ,Trash}

@@ -6,12 +6,22 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { CreateEventComponent } from './create-event/create-event.component';
+import { DeleteEventComponent } from './delete-event/delete-event.component';
+import { DeletedEventsComponent } from './deleted-events/deleted-events.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    CreateEventComponent,
+    DeleteEventComponent,
+    DeletedEventsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,8 @@ const signIn=(email,password)=>{
                 statusCode: 200,
                 status: true,
                 message: "login successfully",
-                token
+                token,
+                email
             }
         }
         else {

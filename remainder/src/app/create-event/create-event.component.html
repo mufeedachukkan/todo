@@ -1,0 +1,47 @@
+<div class="container" *ngIf="item">
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="eventForm">
+                <!-- <div class="mb-3">
+                    <label for="exampleid" class="form-label">userId</label>
+                    <input type="text" class="form-control" formControlName="userId" id="exampleInputPassword1">
+                </div> -->
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Event name</label>
+                    <input type="text" class="form-control" formControlName="name" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label for="dob" class="form-label">Date</label>
+                    <input type="date" class="form-control" formControlName="date" id="exampleInputPassword1">
+                </div>
+                <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0">priority</legend>
+                    <div class="col-sm-10">
+                      <div class="form-check">
+                        <input class="form-check-input " type="radio" name="gridRadios"formControlName="priority" id="gridRadios1" value="low" >
+                        <label class="form-check-label" for="gridRadios1">
+                          low
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" formControlName="priority" value="medium">
+                        <label class="form-check-label" for="gridRadios2">
+                          medium
+                        </label>
+                      </div>
+                      <div class="form-check disabled">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3"formControlName="priority"  value="high" >
+                        <label class="form-check-label" for="gridRadios3">
+                          high
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <div class="d-flex justify-content-end">
+                    <button (click)="cancel()"class="btn btn-dark m-4">Cancel</button>
+                    <button (click)="add()"class="btn btn-dark m-4">Add</button>    
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>

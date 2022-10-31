@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<div class="mt-5" *ngIf="data">
+    <table class="table table-dark "*ngIf="data.length>0">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data;let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.name}}</td>
+            <td>{{item.date}}</td>
+            <td>{{item.priority}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+      <div *ngIf="data.length==0">
+        <h2>no events</h2>
+      </div>
+</div>

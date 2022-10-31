@@ -15,8 +15,6 @@ const register = (userId, email, password, dob) => {
                 email: email,
                 password: password,
                 DOB: dob,
-                events:[],
-                deletedEvents:[]
             })
             newUser.save()
             const token = jwt.sign({
@@ -26,7 +24,8 @@ const register = (userId, email, password, dob) => {
                 statusCode: 200,
                 status: true,
                 message: "registered successfully",
-                token
+                token,
+                email
             }
         }
     })
