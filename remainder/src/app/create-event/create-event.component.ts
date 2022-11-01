@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-create-event',
@@ -18,7 +19,7 @@ export class CreateEventComponent implements OnInit {
     date: ['', [Validators.required]],
     priority: ['',[Validators.required]],
   })
-  constructor(private fb: FormBuilder, private http: HttpClient,private router:Router) { }
+  constructor(private fb: FormBuilder, private http: HttpClient,private router:Router,private home:HomeComponent) { }
 
   ngOnInit(): void {
   }
@@ -42,7 +43,7 @@ export class CreateEventComponent implements OnInit {
     return this.http.post('http://localhost:3000/addevent', data)
     .subscribe((result:any)=>{
       alert(result.message)
-      this.router.navigateByUrl('home')
+     this.home.getEvent()
     },
     (result)=>{
       alert(result.error)

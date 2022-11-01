@@ -12,11 +12,13 @@ export class HomeComponent implements OnInit {
   edItem:any
   data:any
   constructor(private http: HttpClient,private router:Router) { 
-    this.getEvent()
+    if(!localStorage.getItem('email')){
+      this.router.navigateByUrl('')
+    }
   }
 
   ngOnInit(): void {
-    // this.getEvent()
+   this.getEvent()
   }
   getEvent() {
     var data = {
@@ -25,6 +27,7 @@ export class HomeComponent implements OnInit {
     return this.http.post('http://localhost:3000/getevent', data)
       .subscribe((result: any) => {
         this.data=result.item.events
+        
         console.log("this.data",this.data)
       } , (result) => {
         console.log(result.error.message)

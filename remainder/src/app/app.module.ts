@@ -11,6 +11,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { DeleteEventComponent } from './delete-event/delete-event.component';
 import { DeletedEventsComponent } from './deleted-events/deleted-events.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     CreateEventComponent,
     DeleteEventComponent,
     DeletedEventsComponent,
-    NavbarComponent
+    NavbarComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
